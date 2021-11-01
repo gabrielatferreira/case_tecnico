@@ -48,7 +48,7 @@ myEstablishments.forEach(element => {
         });
     });
 
-    //compondo cada estabelecimento com as informaçõe de suas respectivas categorias
+    //compondo cada estabelecimento com as informações de suas respectivas categorias e produtos
     let establishmentOutput = {};
     establishmentOutput[element.name] = {};
     categoriesOutput.forEach(category => {
@@ -56,21 +56,20 @@ myEstablishments.forEach(element => {
         establishmentsProducts.forEach(product => {
             product.categoriesId.forEach(id => {
                 if(category.id === id) {
-                    console.log(product.price);
                     establishmentOutput[element.name][category.name][product.name] = {};
-                    establishmentOutput[element.name][category.name][product.name]['price'] = product.price;
+                    establishmentOutput[element.name][category.name][product.name]['price'] = ( product.price / 100 ).toFixed(2);
                 };
             });
         });
     });
 
-    console.log(establishmentOutput);
-
-    establishmentsOutput.push({
-        name: element.name,
-    });
+    establishmentsOutput.push(establishmentOutput);
 });
 
-function transformingPriceValue() {
-    
-}
+//organizando a saída e gerando um conteúdo .txt
+let text = JSON.stringify(establishmentsOutput, undefined, 4).replace("[","").replace("]","");
+
+//criando o arquivo .txt e preenchendo com o conteúdo
+fs.writeFile('./output.txt', text, function (err) {
+    if (err) return console.log(err);
+});
