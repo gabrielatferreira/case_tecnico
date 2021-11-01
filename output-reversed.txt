@@ -1,29 +1,5 @@
 
     {
-        "Restaurante": {
-            "Bebidas": {
-                "Guaraná": {
-                    "price": "9.00"
-                },
-                "Água": {
-                    "price": "5.00"
-                },
-                "Suco": {
-                    "price": "6.00"
-                }
-            },
-            "Refeições": {
-                "Alaminuta": {
-                    "price": "28.00"
-                },
-                "Churrasco": {
-                    "price": "31.90"
-                }
-            }
-        },
-        "avgPrice": "15.98"
-    },
-    {
         "Comida Asiatica": {
             "Chinesa": {
                 "Rolinho Primavera": {
@@ -102,4 +78,28 @@
             }
         },
         "avgPrice": "20.13"
+    },
+    {
+        "Restaurante": {
+            "Bebidas": {
+                "Guaraná": {
+                    "price": "9.00"
+                },
+                "Água": {
+                    "price": "5.00"
+                },
+                "Suco": {
+                    "price": "6.00"
+                }
+            },
+            "Refeições": {
+                "Alaminuta": {
+                    "price": "28.00"
+                },
+                "Churrasco": {
+                    "price": "31.90"
+                }
+            }
+        },
+        "avgPrice": "15.98"
     }

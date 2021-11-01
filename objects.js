@@ -30,14 +30,18 @@ myEstablishments.forEach(element => {
         }
     });
  
-    //buscando os categoriesId em products
-    //responsável por criar a lista de categorias do estabelecimento
+    //calculando a média aritmética de cada estabelecimento
+    let establishmentAvgPrice = 0;
+
     establishmentsProducts.forEach(product => {
+        establishmentAvgPrice += parseInt(product.price);
         product.categoriesId.forEach(id => {
             establishmentsCategories.add(id);
         });
     });
+    establishmentAvgPrice = ((establishmentAvgPrice / establishmentsProducts.length) /100).toFixed(2);
 
+    //responsável por criar a lista de categorias do estabelecimento
     //criando um subconjunto de categorias de cada estabelecimento
     let categoriesOutput = [];
     establishmentsCategories.forEach(id => {
@@ -50,10 +54,12 @@ myEstablishments.forEach(element => {
 
     //compondo cada estabelecimento com as informações de suas respectivas categorias e produtos
     let establishmentOutput = {};
+   
     establishmentOutput[element.name] = {};
     categoriesOutput.forEach(category => {
-        establishmentOutput[element.name][category.name] = {};
+        establishmentOutput[element.name][category.name] = {};  
         establishmentsProducts.forEach(product => {
+            
             product.categoriesId.forEach(id => {
                 if(category.id === id) {
                     establishmentOutput[element.name][category.name][product.name] = {};
@@ -62,7 +68,7 @@ myEstablishments.forEach(element => {
             });
         });
     });
-
+    establishmentOutput['avgPrice'] = establishmentAvgPrice;
     establishmentsOutput.push(establishmentOutput);
 });
 
@@ -71,5 +77,19 @@ let text = JSON.stringify(establishmentsOutput, undefined, 4).replace("[","").re
 
 //criando o arquivo .txt e preenchendo com o conteúdo
 fs.writeFile('./output.txt', text, function (err) {
+    if (err) return console.log(err);
+});
+
+//criando o arquivo .txt e preenchendo com o conteúdo do avgPrice em ordem crescente
+establishmentsOutput.sort(function(a, b){return a.avgPrice-b.avgPrice});
+text = JSON.stringify(establishmentsOutput, undefined, 4).replace("[","").replace("]","");
+fs.writeFile('./output-ordered.txt', text, function (err) {
+    if (err) return console.log(err);
+});
+
+//criando o arquivo .txt e preenchendo com o conteúdo do avgPrice em ordem decrescente
+establishmentsOutput.reverse();
+text = JSON.stringify(establishmentsOutput, undefined, 4).replace("[","").replace("]","");
+fs.writeFile('./output-reversed.txt', text, function (err) {
     if (err) return console.log(err);
 });

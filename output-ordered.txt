@@ -24,6 +24,44 @@
         "avgPrice": "15.98"
     },
     {
+        "Fast Lanches": {
+            "Lanche": {
+                "Xis Frango": {
+                    "price": "30.00"
+                },
+                "Xis Carne": {
+                    "price": "31.00"
+                },
+                "Xis Coração": {
+                    "price": "36.50"
+                },
+                "Hamburguer": {
+                    "price": "28.50"
+                },
+                "Batata frita": {
+                    "price": "15.00"
+                }
+            },
+            "Bebidas": {
+                "Guaraná": {
+                    "price": "9.00"
+                },
+                "Suco": {
+                    "price": "6.00"
+                },
+                "Água": {
+                    "price": "5.00"
+                }
+            },
+            "Fast food": {
+                "Hamburguer": {
+                    "price": "28.50"
+                }
+            }
+        },
+        "avgPrice": "20.13"
+    },
+    {
         "Comida Asiatica": {
             "Chinesa": {
                 "Rolinho Primavera": {
@@ -64,42 +102,4 @@
             }
         },
         "avgPrice": "24.16"
-    },
-    {
-        "Fast Lanches": {
-            "Lanche": {
-                "Xis Frango": {
-                    "price": "30.00"
-                },
-                "Xis Carne": {
-                    "price": "31.00"
-                },
-                "Xis Coração": {
-                    "price": "36.50"
-                },
-                "Hamburguer": {
-                    "price": "28.50"
-                },
-                "Batata frita": {
-                    "price": "15.00"
-                }
-            },
-            "Bebidas": {
-                "Guaraná": {
-                    "price": "9.00"
-                },
-                "Suco": {
-                    "price": "6.00"
-                },
-                "Água": {
-                    "price": "5.00"
-                }
-            },
-            "Fast food": {
-                "Hamburguer": {
-                    "price": "28.50"
-                }
-            }
-        },
-        "avgPrice": "20.13"
     }
